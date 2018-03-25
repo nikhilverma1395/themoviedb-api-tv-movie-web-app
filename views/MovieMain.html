@@ -1,0 +1,21 @@
+<div class="col l8 push-l2">
+    <div class="input-field">
+        <div class="validate" name="entry" angucomplete-alt id="ex5" placeholder="Search posts" pause="500"
+             selected-object="getSelectedData"
+             remote-url-data-field="results"
+             image-field="poster_path"
+             remote-url="http://api.themoviedb.org/3/search/movie?api_key=API&query="
+             search-fields="id"
+             pause="100"
+             title-field="title"
+             year-field="release_date"
+             description-field="overview"
+             minlength="1"></div>
+    </div>
+    {{}}
+    <div class="result" ng-init="dataAv=false;">
+        <div ng-show="dataAv">
+            <div class="row" ng-include="'views/movieDetail.html'"></div>
+        </div>
+    </div>
+</div>

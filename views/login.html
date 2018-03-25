@@ -1,0 +1,44 @@
+<div id="login-page" class="row">
+    <div class="col s12 l4 push-l4 z-depth-6 card-panel">
+        <form method="post" ng-submit="postLoginData();">
+            <div class="row"
+                 style="height: 90px;background-color:#00BFA5;margin: -12px -12px 25px -12px">
+                <h3 class="center-align">Login</h3>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-social-person-outline prefix"></i>
+                    <input class="validate" id="email" type="text"
+                           ng-model="formData.username">
+                    <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-action-lock-outline prefix"></i>
+                    <input id="password" type="password" ng-model="formData.password">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12  login-text">
+                    <input type="checkbox" id="remember-me" ng-model="formData.rememberMe"
+                           ng-init="formData.rememberMe=false"/>
+                    <label for="remember-me">Remember me</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light validate col s6 push-s3"
+                        style="margin-top: 15px;"
+                        type="submit">Login
+                    <i class="material-icons right">send</i>
+                </button>
+                <div class="input-field col s12">
+                    <p class="margin center medium-small sign-up">Don't have an account? <a
+                            href="#/register">Register</a></p>
+                </div>
+            </div>
+        </form>
+        {{ServerResponse}}
+    </div>
+</div>

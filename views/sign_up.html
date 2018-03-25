@@ -1,0 +1,65 @@
+<div id="login-page" class="row">
+    <div class="col s12 l4 push-l4 z-depth-6 card-panel">
+        <form ng-submit="postRegisterData();" method="post">
+            <div class="row" style="height: 90px;background-color:#00BFA5;margin: -12px -12px 15px -12px">
+                <h3 class="center-align">Register</h3>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-social-person prefix"></i>
+                    <input id="fname" name="fname" ng-model="formData.fname" type="text" class="validate">
+                    <label for="fname" class="center-align">First Name</label>
+                </div>
+            </div>
+
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-social-person-outline prefix"></i>
+                    <input id="lname" name="lname" ng-model="formData.lname" type="text" class="validate">
+                    <label for="lname" class="center-align">Last Name</label>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input id="username" type="text" name="username" ng-model="formData.username" class="validate">
+                    <label for="username" class="center-align">Username</label>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-communication-email prefix"></i>
+                    <input id="email" type="email" class="validate" name="email" ng-model="formData.email">
+                    <label for="email" class="center-align">Email</label>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-action-lock prefix"></i>
+                    <input id="password" type="password" class="validate" name="password" ng-model="formData.password">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-action-lock-outline prefix"></i>
+                    <input id="password-again" type="password" name="pass_again">
+                    <label for="password-again">Re-type password</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <button class="btn waves-effect waves-light validate col s6 push-s3"
+                        style="margin-top: 15px;"
+                        type="submit">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <div class="input-field col s12">
+                    <p class="margin center medium-small sign-up">Already have an account? <a
+                            href="#/login">Login</a></p>
+                </div>
+            </div>
+        </form>
+        {{ServerResponse}}
+    </div>
+</div>

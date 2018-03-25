@@ -1,0 +1,114 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <title>Angucomplete Alt: Autocomplete Directive for AngularJS</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Karla|Roboto+Mono|Raleway:700"/>
+    <link rel="stylesheet" href="css/angucomplete-alt.css"/>
+    <link rel="stylesheet" href="css/materialize.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link href="css/materialIcon.css" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+    <div class="navbar-fixed">
+        <nav style="height: 65px">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">
+                    IMDB</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="waves-effect modal-trigger" href="#modal1"><i
+                            class="material-icons">account_circle</i></a>
+                    </li>
+                    <li style="margin-right: 20px;margin-left: 10px;" ng-show="logg1" ng-bind="userName"></li>
+
+                </ul>
+                <ul id="slide-out" class="side-nav">
+                    <li class="waves-effect wifull"><a href="#/register">Register</a>
+                    </li>
+                    <li class="waves-effedct wifull"><a href="#/login">Login</a></li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Recent Posts<i
+                                        class="material-icons right">expand_more</i></a>
+
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li class="waves-effect wifull"><a style="color: slategrey" href="#/mainPost">
+                                            Support Libraries v22.1.0
+                                        </a></li>
+                                        <li class="waves-effect wifull"><a style="color: slategrey" href="">Second</a>
+                                        </li>
+                                        <li class="waves-effect wifull"><a style="color:slategrey" href="">Third</a>
+                                        </li>
+                                        <li class="waves-effect wifull"><a style="color: slategrey" href="">Fourth</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#/topTv">Top Rated TV-Shows</a></li>
+                    <li><a href="#/topMovie">Top Rated Movies</a></li>
+                    <li><a href="#/popMovie">Popular Movies</a></li>
+                    <li><a href="#/testRoutes">Test Routes</a></li>
+                    <li><a href="#/recent">Recent</a></li>
+                </ul>
+                <a href="#" data-activates="slide-out" class="button-collapse show-on-large show-on-medium-and-down"><i
+                        class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal" style="background: url(img/tvshows.jpg)">
+        <div class="modal-content" style="text-align: center;position:relative;">
+            <a class="waves-effect waves-light btn modalButton" ng-click="">Login</a><br/>
+            <a class="waves-effect waves-light btn  modalButton" ng-click="">SignUp</a><br/>
+        </div>
+    </div>
+    <div ng-init="logReg=true;" class="col s12 hide-on-med-and-down" ng-show="logReg">
+        <ul class="tabs">
+            <li class="tab col s3"><a class="active" id="movie">Movies</a></li>
+            <li class="tab col s3"><a id="tv">TV Series</a></li>
+        </ul>
+    </div>
+    <img src="img/steve.gif" id="progress_gif" ng-show="loading"/>
+    <main ui-view></main>
+</div>
+<script src="js/angular_min.js"></script>
+<script src="js/angular-touch.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/angucomplete-alt.js"></script>
+<script src="appRoute.js"></script>
+<script src="controller/MovieController.js"></script>
+<script src="controller/LoginController.js"></script>
+<script src="controller/RegisterController.js"></script>
+<script src="controller/RecentController.js"></script>
+<script src="controller/TvController.js"></script>
+<script src="controller/LoggedInController.js"></script>
+<script src="controller/TopMovieController.js"></script>
+<script src="controller/TestController.js"></script>
+<script src="app-services/DetailsService.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.materialboxed').materialbox();
+        $('.button-collapse').sideNav({
+                    menuWidth: 300,
+                    edge: 'left',
+                    closeOnClick: true
+                }
+        );
+        $('.modal-trigger').leanModal();
+        $("#movie").click(function () {
+            window.location.href = window.location.pathname + "#/movie";
+        });
+        $("#tv").click(function () {
+            window.location.href = window.location.pathname + "#/tv";
+        });
+    });
+</script>
+</body>
+</html>

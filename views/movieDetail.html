@@ -1,0 +1,30 @@
+        <div class="row">
+            <div class="card-panel col l12" style="height: 750px;">
+                <img class="col l5 materialboxed" height="500px" id="poster"
+                     ng-src="https://image.tmdb.org/t/p/original{{poster_path}}"/>
+
+                <div class="col l7">
+                    <div class="row">
+                        <a class="col l10" style="float:left;text-align: left;" ng-href="{{homepage}}">
+                            <h3 class="title" ng-bind="original_title"></h3>
+                        </a>
+                        <a ng-href="http://www.imdb.com/title/{{imdb_link}}"
+                           style="float:right;text-align: right; margin-top: 29px;"
+                           class="imdb-link col l2" title="IMDb"><i class="icon-imdb"></i></a>
+                    </div>
+                    <div class="row"><p ng-bind="overview"></p>
+                        <span class="right" ng-bind="release_date"></span>
+                        <h5>Genres</h5>
+
+                        <p ng-bind="genre"></p>
+                        <h5>Production Companies</h5>
+
+                        <p ng-bind="names">
+                        </p>
+
+                        <h5>Voting</h5>
+
+                        <p ng-bind="vote_average"></p></div>
+                </div>
+            </div>
+        </div>
